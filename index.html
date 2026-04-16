@@ -1,0 +1,269 @@
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarot Card Generator</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+  --sans:'Source Sans 3','Helvetica','Arial',sans-serif;
+  --serif:'Playfair Display','Times New Roman',serif;
+
+  --body-background:#f5f5f5;
+  --post-background:#ffffff;
+  --text-color:#656565;
+  --border-color:#eeeeee;
+
+  --color-one:#dd8bce;
+  --color-two:#5dba8b;
+  --gradient:var(--color-one), var(--color-two);
+}
+
+html, body{
+  margin:0;
+  padding:0;
+  width:100%;
+  background:transparent;
+  color:var(--text-color);
+  font:14px/1.6 var(--sans);
+}
+
+body{
+  overflow-x:hidden;
+}
+
+.generator-wrap{
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding:0;
+  background:transparent;
+  border:none;
+}
+
+*{
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* prompt generator */
+.prompt-generator-intro{
+    margin:0 0 20px;
+    font-size:.96rem;
+    line-height:1.75;
+}
+ 
+.prompt-generator-box{
+    background:var(--post-background);
+    border:1px solid var(--border-color);
+    padding:28px;
+    box-shadow:0 10px 28px rgba(0,0,0,.08);
+}
+ 
+.prompt-generator-display{
+    min-height:140px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:24px 20px;
+    border:1px solid var(--border-color);
+    background:linear-gradient(135deg, rgba(221,139,206,.08), rgba(93,186,139,.08));
+    font-size:1.05rem;
+    line-height:1.8;
+    transition:opacity .25s ease, transform .25s ease;
+}
+ 
+.prompt-generator-display.is-changing{
+    opacity:.35;
+    transform:translateY(4px);
+}
+ 
+.prompt-generator-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 20px;
+    min-width:180px;
+    padding:12px 18px;
+    border:1px solid var(--border-color);
+    background:var(--post-background);
+    font-family:var(--serif);
+    font-size:1rem;
+    cursor:pointer;
+    transition:.25s ease;
+}
+ 
+.prompt-generator-button:hover{
+    color:#fff;
+    border-color:transparent;
+    background-image:linear-gradient(135deg, var(--gradient));
+}
+ 
+.prompt-library{
+    display:none;
+}
+ 
+.prompt-generator-note{
+    margin-top:24px;
+    padding-top:18px;
+    border-top:1px solid var(--border-color);
+    font-size:.86rem;
+    line-height:1.7;
+    opacity:.85;
+}
+
+/* mobile */
+@media screen and (max-width: 420px){
+    .prompt-generator-box{
+        padding:20px;
+    }
+ 
+    .prompt-generator-display{
+        min-height:120px;
+        padding:20px 16px;
+        font-size:.96rem;
+        line-height:1.7;
+    }
+ 
+    .prompt-generator-button{
+        width:100%;
+        min-width:0;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="generator-wrap">
+
+
+        <section class="prompt-generator-section">
+            <h2 class="page-title">Writing Prompt Generator</h2>
+ 
+                    <div class="prompt-generator-intro">
+                        Click the button to reveal a random writing prompt.
+                    </div>
+ 
+                    <div class="prompt-generator-box">
+                        
+                        <button type="button" class="prompt-generator-button" id="new-prompt-button">
+                            Show New Prompt
+                        </button>
+
+                        <div class="prompt-generator-display" id="prompt-display">
+                            Click “Show New Prompt” to begin.
+                        </div>
+ 
+                    </div>
+ 
+                    <!-- EDIT PROMPTS HERE ONLY -->
+                    <ul id="prompt-library" class="prompt-library noneStyle">
+                        <li>Post 7x18 Lucy wakes up to the kiss on her forehead and Tim & Lucy have the conversation and she basically decides that if they’re gonna be all in they’re going ALL in and not holding back as they should’ve been on the wedding path if it had went the way they thought and basically says nah not just moving in but let’s get married and Tim is stunned like are you sure? I mean I have the ring but … and Lucy tells him yes she’s tired of waiting for their life to begin and then promptly bugs him about the ring asking how long he’s had it and he admit he’s had it for longer than he should probably admit to leading to her attempting to guess when and how soon he actually bought it (maybe after their 2/1 date) and he says if that’s truly what she wants and how she feels to give him the hour to retrieve it before he proposes and then they can get married that day at the courthouse or whenever and wherever she wants but they elope with maybe Tamara, Genny, and Angela as witnesses.</li>
+                        <li>Introspective fic of Tim’s thoughts for both before and during both of their first dates.</li>
+                        <li>AU in which Chris and Ashley become super close after the double date mostly due to their SOs being so close and working the same hours and after the bomb episode Chris/Lucy and Tim/Ashley breakup due to them not working/wanting the same things and Chenford and Chris/Ashley all end up hooking up that night post breakups maybe with them all realizing that they wanted the other person more to begin with outside of the issues in their individual relationships and there’s definitely been emotional cheating on all sides since that double date at least.</li>
+                        <li>AU in which before the sprinklers go off and the evidence is washed away Tim reminds Lucy of PCD and she catches it avoiding that mess but Primm still tanks her score to 17th because he was always going to do it regardless of what she did or how well she actually did.</li>
+                        <li>Missing scene fic of the phone call where Lucy calls Rachel about Tim and her dating and their conversation and Lucy’s nerves and thoughts regarding this conversation.</li>
+                        <li>Pre-relationship era. Tim and Lucy play truth or dare with each other...</li>
+                        <li>Lucy calling Tim pretty.</li>
+                        <li>An AU where the station doesn't know about Dim/Juicy's existence and while Tim/Lucy are away from the station (vacation, uc work or something), Dim/Juicy infiltrate the department which puts Tim/Lucy in danger.</li>
+                        <li>After pranking Lucy (by Tim fake proposing to Ashley), she is extremely hurt. The next day she leaves for a 6 month UC work without telling Tim about it. Tim doesn't realize until end of shift that Lucy is not there and then when he realises she has gone UC without telling him, he panics a lot. He tries to keep tabs on her through Nyla but he is not allowed to interfere or know about it ( he gets increasingly desperate and maybe finally realized and accepts he has feelings for her). Angela tries to cheer him up and look after him.</li>
+                        <li>Crack fic. The disaster double date with Chris and Ashley but Tim gets jealous when Lucy laughs at Chris’ joke and he touches/fingers her to finishing under the table without their dates knowing.</li>
+                        <li>Missing Moment Fic from 3x09. Tim's perspective of emotions when Lucy fake-confessed her feelings to him in the shop on their last Rookie/TO shift.</li>
+                        <li>A 5+1 fic where Lucy almost tells Tim how she feels in five different moments, and the one time she finally does.</li>
+                        <li>Angsty pre-dating story mixed with jealousy.</li>
+                        <li>Fic during Nucy where they’re fighting about something and Tim steps in to have Lucy’s back which is how he figures out they’re dating and he later tells Lucy she deserves so much better (they may or may not kiss after that 🤭)</li>
+                        <li>Lucy texting Tim increasingly corny dad jokes throughout their work day since they're not riding together and she can't (affectionately) ragebait him in person.</li>
+                        <li>Chenford AU where they volunteer at an animal shelter…</li>
+                        <li>A little boy walks into the station in a tiny suit, ring box in hand, and proposes to Officer Lucy Chen who once helped him. Her reaction melted the whole room. Everyone, especially Angela, teases Tim that the kid beat him to it.</li>
+                        <li>Tim doesn't breakup with Lucy but keeps her in the loop the whole time... he breaks down in the parking lot, confesses to being suicidal and that he needs help. Lucy helps him find a professional.</li>
+                        <li>"The radio crackled, and a faint voice came through the shop '[Tim/Lucy]', I need you to know I love you" - Happy Ending.</li>
+                        <li>Season 4 Canon Divergence - Pre-canon but no Chris/Ashley. Tim and Lucy have to attend a sergeant-aide conference out of town. Surprise, they were booked for only one room.</li>
+                        <li>AU where Tim Bradford, an army veteran joins the LAPD in his late thirties. His training officer is Lucy Chen, who joined the force at a much younger age and has years of experience under her belt. What happens when his army experience and her police expertise clash?</li>
+                        <li>Tim and Lucy are secretly married during her Rookie Year. They fell in love and got married before she decided to become a cop.</li>
+                        <li>Time Loop AU. Tim dies in a shoot out, only to wake up and find himself stuck in a loop. By the 6th time, he decides he can't do it alone and confides in Lucy. Lucy is skeptical at first but has to believe Tim when by the end of the day, she's holding Tim as he bleeds out out in her arms.</li>
+                        <li>AU where Lucy didn't survive DOD and Tim never gotten over it nor forgave himself and somehow, he finds a way to time travel to a parallel universe where he watches another version of himself saving her on time. He is then transported to the breakup and tries to involve himself.</li>
+                        <li>Tim and Lucy are happily married with kids, when of their children is kidnapped.</li>
+                        <li>Seth kidnaps Tim post the Wildfire episode and Lucy realizes her priorities and marinates in guilt, thinking she will never get to tell him she still loves him.</li>
+                        <li>Tim discovers other officers are referring to Chen as "Officer Boot-y" in the locker room/off-duty.</li>
+                        <li>Lucy is stuck in a time loop where Tim dies. She tries to break out of it and finally save his life.</li>
+                        <li>Post Wildfire episode. Tim gets kidnapped and Lucy searches his house for clues when she finds an engagement ring and a crumbled letter he had writter to apologize for the breakup and explain why he did it.</li>
+                        <li>Rosalind goes for Tim to get back at Lucy.</li>
+                        <li>Lucy is a singer in Vegas and after witnessing a murder she has to hide in a convent (there she meets Tamara) and Tim is the cop responsible for keeping her safe.</li>
+                        <li>Tim and Lucy get trapped and drugged (like in the hospital in Season 7), but since it's the Pre-Relationship era, they both say exactly what they are thinking...</li>
+                        <li>Tim is injured on duty and Lucy runs to the ambulance or to the emergency room.</li>
+                        <li>Lucy ragebaits Tim into fucking her.</li>
+                        <li>Lucy gets hurts on the job and she’s either in a coma or in surgery and while unconscious she sees Captain Andersen and they have a talk about everything including Tim and at the end she tells her how proud she is and that she needs wake up & get back to Tim.</li>
+                        <li>A version of Tim where he couldn’t keep his cool and be watch commander when he found Lucy in that tunnel. He’s goes absolutely feral and his number 1 priority is to take care of Lucy and make her feel better and he throws all his duties away.</li>
+                        <li>Lucy living the radio on and everyone hears as she is attacked and fights for her life. Bonus for Feral Tim?</li>
+                        <li>Post 2x1 fic where Tim shows up at Lucy’s house to *punish* her for mouthing off to her TO.</li>
+                        <li>Lucy and Tim have a son, who they name Collin, in honour of Tamara. And I would love a one-shot (or can be longer) that has a similar scene to Charmed 5x16 when Piper shared the name of their baby.</li>
+                    </ul>
+ 
+                    <div class="prompt-generator-note">
+                        An evergrowing list of prompts requested by the community, found on twitter etc.
+                    </div>
+        </section>
+
+
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="0" height="0" style="display:block">
+    <defs>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%" gradientTransform="rotate(-45)" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#bdc2e8"></stop>
+            <stop offset="100%" stop-color="#e6dee9"></stop>
+        </linearGradient>
+    </defs>
+</svg>
+
+<script>
+(function () {
+    function getPrompts() {
+        return Array.from(document.querySelectorAll("#prompt-library li"))
+            .map(function (item) {
+                return item.textContent.trim();
+            })
+            .filter(Boolean);
+    }
+ 
+    function randomIndex(max) {
+        return Math.floor(Math.random() * max);
+    }
+ 
+    document.addEventListener("DOMContentLoaded", function () {
+        var button = document.getElementById("new-prompt-button");
+        var display = document.getElementById("prompt-display");
+        var prompts = getPrompts();
+        var lastIndex = -1;
+ 
+        if (!button || !display || !prompts.length) return;
+ 
+        function showPrompt() {
+            if (!prompts.length) return;
+ 
+            var index = randomIndex(prompts.length);
+ 
+            if (prompts.length > 1) {
+                while (index === lastIndex) {
+                    index = randomIndex(prompts.length);
+                }
+            }
+ 
+            display.classList.add("is-changing");
+ 
+            window.setTimeout(function () {
+                display.textContent = prompts[index];
+                display.classList.remove("is-changing");
+                lastIndex = index;
+            }, 180);
+        }
+ 
+        button.addEventListener("click", showPrompt);
+    });
+})();
+</script>
+</body>
+</html>
